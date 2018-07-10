@@ -22,3 +22,63 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.card {
+    background-color: #ffffff;
+    border: 8px solid #ffffff;
+    box-shadow: 0 8px 0px 0 rgba(0,0,0,0.2);
+}
+.card_title_text
+{
+    text-align:center;
+    font-size:16px;
+}
+.card_desc_text {
+    margin-top:20px;
+    text-align: center;
+    font-size:14px;
+}
+
+.card:hover {
+    border: 8px solid #c4aced;
+    background-color: #c4aced;
+}
+.resultBox {
+    background: #ffffff;
+    display: none;
+    width: 100%;
+    margin-bottom: 0px;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #c4aced;
+    float: left;
+}
+
+.lead {
+    font-size: 1.7rem;
+    font-weight: 300;
+    color:#ffffff
+}
+
+.body-bg {
+    background-color: #f3eefb;
+}
+.bg-image-title 
+{
+    color:#ffffff
+}
+.search_icon_glyph {
+    height: 42px;
+    width: 42px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.container_top {
+    min-width: 100px !important;
+    background-color: #c4aced !important;
+    padding: 50px 0 80px;
+    background-image: url('../Resources/background_image.jpg');
+}

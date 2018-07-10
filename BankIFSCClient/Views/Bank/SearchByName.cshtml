@@ -1,0 +1,96 @@
+﻿@model BankIFSCClient.Models.Bank
+@{
+    ViewBag.Title = "SearchByName";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Find IFSC Code for Banks in India</h2>
+
+@using (Html.BeginForm("name", "bank", FormMethod.Post))
+{
+
+    <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name)
+                    <div class="tt-container">
+                        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Name)
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Branch)
+                    <div class="tt-container">
+                        @Html.TextBoxFor(m => m.Branch, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Branch)
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.City)
+                    <div class="tt-container">
+                        @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.City)
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 last">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.State)
+                    <div class="tt-container">
+                        @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.State)
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <br />
+
+    <button class="btn btn-primary">Submit</button>
+}
+
+<br /><br />
+@if (Model != null && Model.Id > 0)
+{
+    <div class="row">
+        <div class="resultBox" style="display: block;">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="resultElement"><label><b>IFSC Code : </b></label><p>@Model.IFSCCode</p></div>
+                <div class="resultElement"><label><b>MICR Code : </b></label><p>@Model.MICRCode</p></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="resultElement"><label><b>Bank : </b></label><p>@Model.Name</p></div>
+                <div class="resultElement"><label><b>Address: </b></label><p>@Model.Address</p></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="resultElement"><label><b>District: </b></label><p>@Model.District</p></div>
+                <div class="resultElement"><label><b>State: </b></label><p>@Model.State</p></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 last">
+                <div class="resultElement"><label><b>Branch: </b></label><p>@Model.Branch</p></div>
+                <div class="resultElement"><label><b>Contact No : </b></label><p>@Model.Contact</p></div>
+            </div>
+        </div>
+    </div>
+}
+else if (Model == null)
+{
+    <div class="row">
+        <div class="resultBox" style="display: block; text-align:center">
+            <p>No Data Found</p>
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+}
+
+
